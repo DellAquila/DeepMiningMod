@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mafi.Base</name>
+    </assembly>
+    <members>
+        <member name="M:Mafi.Base.BaseMod.#ctor(Mafi.Core.CoreMod,Mafi.Base.BaseModConfig)">
+            <summary>
+            Base mod depends on <see cref="T:Mafi.Core.CoreMod"/>.
+            </summary>
+        </member>
+        <member name="P:Mafi.Base.BaseModConfig.BuildStartingFactory">
+            <summary>
+            Whether a test factory will be built on the game start.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Buildings.TombOfCaptainsProto.MinUnityForFirePerMonth">
+            <summary>
+            Unity gain (or loss) when flowers are at 0%.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Buildings.TombOfCaptainsProto.MaxUnityForFirePerMonth">
+            <summary>
+            Unity gain when flowers are at 100%.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Buildings.TombOfCaptainsProto.MinUnityForFlowersPerMonth">
+            <summary>
+            Unity gain (or loss) when fire is at 0%.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Buildings.TombOfCaptainsProto.MaxUnityForFlowersPerMonth">
+            <summary>
+            Unity gain when fire is at 100%.
+            </summary>
+        </member>
+        <member name="P:Mafi.Base.Prototypes.Machines.PowerGenerators.MechPowerGeneratorFromProduct.Efficiency">
+            <summary>
+            Efficiency based on <see cref="P:Mafi.Base.Prototypes.Machines.PowerGenerators.MechPowerGeneratorFromProduct.LossesLastTick"/>.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.ElectricityGeneratorFromMechPowerProto.MinUtilization">
+            <summary>
+            Utilization where the production reaches zero.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.ElectricityGeneratorFromMechPowerProto.Gfx.SoundPrefabPath">
+            <summary>
+            The sound the generator makes while it is operating.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.ElectricityGeneratorFromProductProto.Gfx.ParticlesParams">
+            <summary>
+            Parameters for particles.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.ElectricityGeneratorFromProductProto.Gfx.SoundPrefabPath">
+            <summary>
+            The sound the generator makes while it is operating.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.FlyWheelEntityProto.Gfx.SoundPrefabPath">
+            <summary>
+            The sound the generator makes while it is operating.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.MechPowerGeneratorFromProductProto.EfficiencyIncPerTick">
+            <summary>
+            How much efficiency per tick is gained when the generator has input. This also consumes extra resources.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.MechPowerGeneratorFromProductProto.EfficiencyDecPerTick">
+            <summary>
+            How much efficiency is lost when the generator has no input or is turned off.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.PowerGenerators.MechPowerGeneratorFromProductProto.Gfx.SoundPrefabPath">
+            <summary>
+            The sound the generator makes while it is operating.
+            </summary>
+        </member>
+        <member name="T:Mafi.Base.Prototypes.Machines.CropsData">
+             <remarks>
+             Note for water consumption: <b>Crops should consume MORE THAN 0.2 and LESS THAN 2 water per day.</b>
+             Farms accumulate 2 quantity of water per rainy day (4 per heavy rain). If crop takes more than 2, soil water level will be
+             decreasing on farm during rain. Farm without crop has 0.2 water/day evaporation, greenhouses are half
+             of that at 0.1 per day.
+            
+             This also means that for each 1 month of rain the farm will get 60 water.
+            
+             Note for fertility consumption: <b>Crops should consume LESS THAN 0.4% fertility per day.</b> Farms regenerate
+             0.6% of missing fertility per day. This means that if farm is all the way at 0 fertility, it will
+             regenerate 0.6% fertility per day. Given that crops without rotation will add 50% fertility penalty,
+             no crop should have higher fertility consumption than 0.4%, otherwise they will drain farm all the way to zero
+             fertility.
+             </remarks>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Machines.FarmsData.FARM_FERTILITY_REPLENISH">
+            <summary>
+            How much of missing fertility is replenished every day.
+            WARNING: This value hugely affects farms balance.
+            </summary>
+        </member>
+        <member name="T:Mafi.Base.Prototypes.Transport.TransportsData">
+            <summary>
+            Data in this class are based on 'Transport speed and throughput' sheet:
+            https://docs.google.com/spreadsheets/d/15sNKHriVlNTiUOYw6VRSKcKbZBsRDE5R3eySpUyM-Eo/edit?usp=sharing
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Transport.TransportsData.CIRCLE_SHARPNESS">
+            <summary>
+            This parameter makes the corners nearly exact circles. Other values look ugly.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Transport.TransportsData.SEGMENTS_COUNT">
+            <summary>
+            Number of segments per curve for all transports.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Transport.TransportsData.PILLAR_RANGE">
+            <summary>
+            Range of pillar (radius), same for all transports.
+            </summary>
+        </member>
+        <member name="F:Mafi.Base.Prototypes.Transport.TransportsData.TRANSPORT_UV_LENGTH">
+            <summary>
+            Length of transport across the texture. Transport texture will repeat after this distance.
+            </summary>
+        </member>
+        <member name="T:Mafi.Base.IResearchNodesData">
+            <summary>
+            Simple interface to help to discover all modules that are registering research nodes.
+            </summary>
+        </member>
+        <member name="M:Mafi.Base.EntityCostsBuilderExtensions.MaintenanceT1SuperEarly(Mafi.Core.Prototypes.EntityCostsTpl.Builder,System.Int32)">
+            <summary>
+            Monthly maintenance for buildings.
+            </summary>
+        </member>
+        <member name="M:Mafi.Base.EntityCostsBuilderExtensions.MaintenanceT1Early(Mafi.Core.Prototypes.EntityCostsTpl.Builder,System.Int32)">
+            <summary>
+            Monthly maintenance for buildings.
+            </summary>
+        </member>
+        <member name="M:Mafi.Base.EntityCostsBuilderExtensions.MaintenanceT1(Mafi.Core.Prototypes.EntityCostsTpl.Builder,System.Int32)">
+            <summary>
+            Monthly maintenance for buildings.
+            </summary>
+        </member>
+        <member name="M:Mafi.Base.EntityCostsBuilderExtensions.MaintenanceT2(Mafi.Core.Prototypes.EntityCostsTpl.Builder,System.Int32)">
+            <summary>
+            Monthly maintenance for buildings.
+            </summary>
+        </member>
+        <member name="M:Mafi.Base.EntityCostsBuilderExtensions.MaintenanceT2(Mafi.Core.Prototypes.EntityCostsTpl.Builder,Mafi.Fix32)">
+            <summary>
+            Monthly maintenance for buildings.
+            </summary>
+        </member>
+        <member name="M:Mafi.Base.EntityCostsBuilderExtensions.MaintenanceT3(Mafi.Core.Prototypes.EntityCostsTpl.Builder,System.Int32)">
+            <summary>
+            Monthly maintenance for buildings.
+            </summary>
+        </member>
+    </members>
+</doc>
